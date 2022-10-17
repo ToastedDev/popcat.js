@@ -100,6 +100,17 @@ export function pooh(text1: string, text2: string): string {
   )}&text2=${encodeURIComponent(text2)}`;
 }
 
+export function drake(text1: string, text2: string): string {
+  if (!text1) throw new Error("No text 1 provided.");
+  if (!text2) throw new Error("No text 2 provided.");
+  if (typeof text1 !== "string") throw new Error("Text 1 must be a string.");
+  if (typeof text2 !== "string") throw new Error("Text 2 must be a string.");
+
+  return `https://api.popcat.xyz/drake?text1=${encodeURIComponent(
+    text1
+  )}&text2=${encodeURIComponent(text2)}`;
+}
+
 export function unforgivable(text: string): string {
   if (!text) throw new Error("No text provided.");
   if (typeof text !== "string") throw new Error("Text must be a string.");

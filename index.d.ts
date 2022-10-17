@@ -44,6 +44,8 @@ declare module "popcat.js" {
 
   export function pooh(text1: string, text2: string): string;
 
+  export function drake(text1: string, text2: string): string;
+
   export function oogway(text: string): string;
 
   export function unforgivable(text: string): string;
