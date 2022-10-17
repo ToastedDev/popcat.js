@@ -116,6 +116,44 @@ export function invert(image: string): string {
   return `https://api.popcat.xyz/invert?image=${encodeURIComponent(image)}`;
 }
 
+export function jokeOverHead(image: string): string {
+  if (!image) throw new Error("No image provided.");
+  if (typeof image !== "string") throw new Error("Image must be a string.");
+  if (!image.startsWith("https://"))
+    throw new Error("Image must be a valid URL.");
+
+  return `https://api.popcat.xyz/jokeoverhead?image=${encodeURIComponent(
+    image
+  )}`;
+}
+
+export function mnm(image: string): string {
+  if (!image) throw new Error("No image provided.");
+  if (typeof image !== "string") throw new Error("Image must be a string.");
+  if (!image.startsWith("https://"))
+    throw new Error("Image must be a valid URL.");
+
+  return `https://api.popcat.xyz/mnm?image=${encodeURIComponent(image)}`;
+}
+
+export function pet(image: string): string {
+  if (!image) throw new Error("No image provided.");
+  if (typeof image !== "string") throw new Error("Image must be a string.");
+  if (!image.startsWith("https://"))
+    throw new Error("Image must be a valid URL.");
+
+  return `https://api.popcat.xyz/pet?image=${encodeURIComponent(image)}`;
+}
+
+export function facts(image: string): string {
+  if (!image) throw new Error("No image provided.");
+  if (typeof image !== "string") throw new Error("Image must be a string.");
+  if (!image.startsWith("https://"))
+    throw new Error("Image must be a valid URL.");
+
+  return `https://api.popcat.xyz/facts?image=${encodeURIComponent(image)}`;
+}
+
 export function whoWouldWin(image1: string, image2: string): string {
   if (!image1) throw new Error("No image 1 provided.");
   if (typeof image1 !== "string") throw new Error("Image 1 must be a string.");
@@ -245,6 +283,13 @@ export function caution(text: string): string {
   return `https://api.popcat.xyz/caution?text=${encodeURIComponent(text)}`;
 }
 
+export function alert(text: string): string {
+  if (!text) throw new Error("No text provided.");
+  if (typeof text !== "string") throw new Error("Text must be a string.");
+
+  return `https://api.popcat.xyz/alert?text=${encodeURIComponent(text)}`;
+}
+
 export async function lulcat(text: string): Promise<string> {
   if (!text) throw new Error("No text provided.");
   if (typeof text !== "string") throw new Error("Text must be a string.");
@@ -326,6 +371,21 @@ export async function reverse(text: string): Promise<string> {
 
   const data = (await fetch(
     `https://api.popcat.xyz/reverse?binary=${encodeURIComponent(text)}`
+  )
+    .then((res) => res.json())
+    .catch((e) => {
+      throw new Error(e);
+    })) as { text: string };
+
+  return data.text;
+}
+
+export async function doublestruck(text: string): Promise<string> {
+  if (!text) throw new Error("No text provided.");
+  if (typeof text !== "string") throw new Error("Text must be a string.");
+
+  const data = (await fetch(
+    `https://api.popcat.xyz/doublestruck?binary=${encodeURIComponent(text)}`
   )
     .then((res) => res.json())
     .catch((e) => {

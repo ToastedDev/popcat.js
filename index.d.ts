@@ -53,6 +53,12 @@ declare module "popcat.js" {
 
   export function invert(image: string): string;
 
+  export function jokeOverHead(image: string): string;
+
+  export function mnm(image: string): string;
+
+  export function pet(image: string): string;
+
   export function whoWouldWin(image1: string, image2: string): string;
 
   export function ship(image1: string, image2: string): string;
@@ -77,6 +83,8 @@ declare module "popcat.js" {
 
   export function caution(text: string): string;
 
+  export function alert(text: string): string;
+
   export async function lulcat(text: string): Promise<string>;
 
   export async function mock(text: string): Promise<string>;
@@ -88,6 +96,8 @@ declare module "popcat.js" {
   export async function decode(binary: string): Promise<string>;
 
   export async function reverse(text: string): Promise<string>;
+
+  export async function doublestruck(text: string): Promise<string>;
 
   export async function shorten(url: string, slug: string): Promise<string>;
 
