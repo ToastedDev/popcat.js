@@ -87,6 +87,8 @@ declare module "popcat.js" {
 
   export async function decode(binary: string): Promise<string>;
 
+  export async function reverse(text: string): Promise<string>;
+
   export async function shorten(url: string, slug: string): Promise<string>;
 
   export class WelcomeCard {

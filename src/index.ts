@@ -320,6 +320,21 @@ export async function decode(binary: string): Promise<string> {
   return data.text;
 }
 
+export async function reverse(text: string): Promise<string> {
+  if (!text) throw new Error("No text provided.");
+  if (typeof text !== "string") throw new Error("Text must be a string.");
+
+  const data = (await fetch(
+    `https://api.popcat.xyz/reverse?binary=${encodeURIComponent(text)}`
+  )
+    .then((res) => res.json())
+    .catch((e) => {
+      throw new Error(e);
+    })) as { text: string };
+
+  return data.text;
+}
+
 export async function shorten(url: string, slug: string): Promise<string> {
   if (!url) throw new Error("No URL provided.");
   if (!slug) throw new Error("No slug provided.");
