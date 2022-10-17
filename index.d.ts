@@ -1,4 +1,4 @@
-import { ColorData, GitHubData, LyricsData } from "./types";
+import { ColorData, GitHubData, LyricsData } from "./src/types";
 
 declare module "popcat.js" {
   export class Chatbot {

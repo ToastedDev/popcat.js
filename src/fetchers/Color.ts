@@ -1,5 +1,5 @@
 import fetch from "node-fetch";
-import { ColorData } from "../../types/ColorData";
+import { ColorData } from "../types/ColorData";
 
 export async function color<C extends string>(
   hex: string

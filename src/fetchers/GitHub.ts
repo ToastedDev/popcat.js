@@ -1,5 +1,5 @@
 import fetch from "node-fetch";
-import { GitHubData } from "../../types/GitHubData";
+import { GitHubData } from "../types/GitHubData";
 
 export async function github(username: string): Promise<GitHubData> {
   if (!username) throw new Error("No username provided.");
