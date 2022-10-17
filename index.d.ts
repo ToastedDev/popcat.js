@@ -4,6 +4,7 @@ import {
   Gender,
   GitHubData,
   LyricsData,
+  NPMData,
   PeriodicTableData,
   QuoteData,
   RandomColorData,
@@ -79,6 +80,8 @@ declare module "popcat.js" {
   export async function subreddit(name: string): Promise<SubredditData>;
 
   export async function weather(query: string): Promise<WeatherData>;
+
+  export async function npm(pkg: string): Promise<NPMData>;
 
   export async function pickupLine(): Promise<string>;
 

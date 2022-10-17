@@ -10,6 +10,7 @@ export * from "popcat-chatbot";
 export * from "./fetchers/Color";
 export * from "./fetchers/GitHub";
 export * from "./fetchers/Lyrics";
+export * from "./fetchers/NPM";
 export * from "./fetchers/PeriodicTable";
 export * from "./fetchers/Subreddit";
 export * from "./fetchers/Weather";
