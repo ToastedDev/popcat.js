@@ -1,4 +1,9 @@
-import { ColorData, GitHubData, LyricsData } from "./src/types";
+import {
+  ColorData,
+  GitHubData,
+  LyricsData,
+  RandomColorData,
+} from "./src/types";
 
 declare module "popcat.js" {
   export class Chatbot {
@@ -42,4 +47,6 @@ declare module "popcat.js" {
   export async function lyrics(song: string): Promise<LyricsData>;
 
   export async function pickupLine(): Promise<string>;
+
+  export async function randomColor(): Promise<RandomColorData>;
 }

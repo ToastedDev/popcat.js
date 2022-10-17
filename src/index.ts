@@ -1,4 +1,5 @@
 import fetch from "node-fetch";
+import { RandomColorData } from "./types";
 
 export * from "popcat-chatbot";
 export * from "./fetchers/Color";
@@ -39,4 +40,14 @@ export async function pickupLine(): Promise<string> {
     });
 
   return data.pickupline;
+}
+
+export async function randomColor(): Promise<RandomColorData> {
+  const data = (await fetch("https://api.popcat.xyz/randomcolor")
+    .then((res) => res.json())
+    .catch((e) => {
+      throw new Error(e);
+    })) as RandomColorData;
+
+  return data;
 }
