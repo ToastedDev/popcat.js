@@ -259,6 +259,21 @@ export async function encode(text: string): Promise<string> {
   return data.binary;
 }
 
+export async function decode(binary: string): Promise<string> {
+  if (!binary) throw new Error("No binary provided.");
+  if (typeof binary !== "string") throw new Error("Binary must be a string.");
+
+  const data = (await fetch(
+    `https://api.popcat.xyz/decode?binary=${encodeURIComponent(binary)}`
+  )
+    .then((res) => res.json())
+    .catch((e) => {
+      throw new Error(e);
+    })) as { text: string };
+
+  return data.text;
+}
+
 export async function shorten(url: string, slug: string): Promise<string> {
   if (!url) throw new Error("No URL provided.");
   if (!slug) throw new Error("No slug provided.");
