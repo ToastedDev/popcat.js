@@ -477,7 +477,7 @@ export async function fact(): Promise<string> {
 }
 
 export async function wyr(): Promise<string[]> {
-  const data = (await fetch("https://api.popcat.xyz/fact")
+  const data = (await fetch("https://api.popcat.xyz/wyr")
     .then((res) => res.json())
     .catch((e) => {
       throw new Error(e);
