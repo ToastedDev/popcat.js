@@ -3,6 +3,7 @@ import {
   ColorData,
   Gender,
   GitHubData,
+  iTunesData,
   LyricsData,
   MemeData,
   NPMData,
@@ -115,6 +116,8 @@ declare module "popcat.js" {
   export async function weather(query: string): Promise<WeatherData>;
 
   export async function npm(pkg: string): Promise<NPMData>;
+
+  export async function itunes(title: string): Promise<iTunesData>;
 
   export async function pickupLine(): Promise<string>;
 

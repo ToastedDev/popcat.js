@@ -1,6 +1,7 @@
 export * from "./CarData";
 export * from "./ColorData";
 export * from "./GitHubData";
+export * from "./iTunesData";
 export * from "./LyricsData";
 export * from "./MemeData";
 export * from "./NPMData";

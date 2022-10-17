@@ -16,6 +16,7 @@ export * from "./fetchers/PeriodicTable";
 export * from "./fetchers/Subreddit";
 export * from "./fetchers/Weather";
 export * from "./fetchers/WelcomeCard";
+export * from "./fetchers/iTunes";
 
 export function screenshot(url: string): string {
   if (!url) throw new Error("No URL provided.");
