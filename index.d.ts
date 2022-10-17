@@ -1,8 +1,16 @@
 import {
+  CarData,
   ColorData,
+  Gender,
   GitHubData,
   LyricsData,
+  PeriodicTableData,
+  QuoteData,
   RandomColorData,
+  ShowerThoughtData,
+  SubredditData,
+  WeatherData,
+  WelcomeOptions,
 } from "./src/types";
 
 declare module "popcat.js" {
@@ -22,16 +30,30 @@ declare module "popcat.js" {
 
   export function screenshot(url: string): string;
 
+  export function jail(image: string): string;
+
+  export function communism(image: string): string;
+
+  export function wanted(image: string): string;
+
+  export function gun(image: string): string;
+
+  export function whoWouldWin(image1: string, image2: string): string;
+
+  export function sadCat(text: string): string;
+
+  export function pooh(text1: string, text2: string): string;
+
+  export function oogway(text: string): string;
+
+  export function unforgivable(text: string): string;
+
+  export async function lulcat(text: string): Promise<string>;
+
   export async function shorten(url: string, slug: string): Promise<string>;
 
   export class WelcomeCard {
-    constructor(options?: {
-      background: string;
-      avatar: string;
-      text1: string;
-      text2: string;
-      text3: string;
-    });
+    constructor(options?: WelcomeOptions);
 
     public setBackground(url: string): this;
     public setAvatar(url: string): this;
@@ -48,9 +70,21 @@ declare module "popcat.js" {
 
   export async function lyrics(song: string): Promise<LyricsData>;
 
+  export async function periodicTable(
+    element: string
+  ): Promise<PeriodicTableData>;
+
+  export async function subreddit(name: string): Promise<SubredditData>;
+
+  export async function weather(query: string): Promise<WeatherData>;
+
   export async function pickupLine(): Promise<string>;
 
   export async function randomColor(): Promise<RandomColorData>;
 
-  export async function sadCat(text: string): string;
+  export async function car(): Promise<CarData>;
+
+  export async function showerThought(): Promise<ShowerThoughtData>;
+
+  export async function quote(): Promise<QuoteData>;
 }

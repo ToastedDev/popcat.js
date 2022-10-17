@@ -1,12 +1,5 @@
 import fetch from "node-fetch";
-
-export type WelcomeOptions = {
-  background: string;
-  avatar: string;
-  text1: string;
-  text2: string;
-  text3: string;
-};
+import { WelcomeOptions } from "../types";
 
 export class WelcomeCard {
   public readonly data: {

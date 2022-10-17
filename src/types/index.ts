@@ -1,5 +1,12 @@
+export * from "./CarData";
 export * from "./ColorData";
 export * from "./GitHubData";
 export * from "./LyricsData";
+export * from "./PeriodicTableData";
+export * from "./QuoteData";
 export * from "./RandomColorData";
-export * from "./CarData";
+export * from "./ShowerThoughtData";
+export * from "./SubredditData";
+export * from "./WeatherData";
+export * from "./WelcomeOptions";
+export type Gender = "Male" | "Female";
