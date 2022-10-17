@@ -51,3 +51,9 @@ export async function randomColor(): Promise<RandomColorData> {
 
   return data;
 }
+
+export function sadCat(text: string): string {
+  if (!text) throw new Error("No text provided.");
+
+  return `https://api.popcat.xyz/sadcat?text=${encodeURIComponent(text)}`;
+}

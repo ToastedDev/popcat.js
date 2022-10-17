@@ -49,4 +49,6 @@ declare module "popcat.js" {
   export async function pickupLine(): Promise<string>;
 
   export async function randomColor(): Promise<RandomColorData>;
+
+  export async function sadCat(text: string): string;
 }
