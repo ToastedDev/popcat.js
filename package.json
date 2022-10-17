@@ -1,6 +1,6 @@
 {
   "name": "popcat.js",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A wrapper for Pop Cat's API.",
   "main": "lib/index.js",
   "types": "index.d.ts",

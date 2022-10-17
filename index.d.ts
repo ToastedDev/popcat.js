@@ -3,7 +3,10 @@ import {
   ColorData,
   Gender,
   GitHubData,
+  iTunesData,
   LyricsData,
+  MemeData,
+  NPMData,
   PeriodicTableData,
   QuoteData,
   RandomColorData,
@@ -38,17 +41,63 @@ declare module "popcat.js" {
 
   export function gun(image: string): string;
 
+  export function clown(image: string): string;
+
+  export function uncover(image: string): string;
+
+  export function greyscale(image: string): string;
+
+  export function ad(image: string): string;
+
+  export function blur(image: string): string;
+
+  export function invert(image: string): string;
+
+  export function jokeOverHead(image: string): string;
+
+  export function mnm(image: string): string;
+
+  export function pet(image: string): string;
+
   export function whoWouldWin(image1: string, image2: string): string;
+
+  export function ship(image1: string, image2: string): string;
 
   export function sadCat(text: string): string;
 
   export function pooh(text1: string, text2: string): string;
 
+  export async function translate(lang: string, text: string): Promise<string>;
+
+  export function drake(text1: string, text2: string): string;
+
+  export function colorify(image: string, color: string): string;
+
   export function oogway(text: string): string;
 
   export function unforgivable(text: string): string;
 
+  export function biden(text: string): string;
+
+  export function pikachu(text: string): string;
+
+  export function caution(text: string): string;
+
+  export function alert(text: string): string;
+
   export async function lulcat(text: string): Promise<string>;
+
+  export async function mock(text: string): Promise<string>;
+
+  export async function textToMorse(text: string): Promise<string>;
+
+  export async function encode(text: string): Promise<string>;
+
+  export async function decode(binary: string): Promise<string>;
+
+  export async function reverse(text: string): Promise<string>;
+
+  export async function doublestruck(text: string): Promise<string>;
 
   export async function shorten(url: string, slug: string): Promise<string>;
 
@@ -78,6 +127,10 @@ declare module "popcat.js" {
 
   export async function weather(query: string): Promise<WeatherData>;
 
+  export async function npm(pkg: string): Promise<NPMData>;
+
+  export async function itunes(title: string): Promise<iTunesData>;
+
   export async function pickupLine(): Promise<string>;
 
   export async function randomColor(): Promise<RandomColorData>;
@@ -87,4 +140,12 @@ declare module "popcat.js" {
   export async function showerThought(): Promise<ShowerThoughtData>;
 
   export async function quote(): Promise<QuoteData>;
+
+  export async function fact(): Promise<string>;
+
+  export async function wyr(): Promise<string[]>;
+
+  export async function meme(): Promise<MemeData>;
+
+  export async function eightBall(): Promise<string>;
 }
