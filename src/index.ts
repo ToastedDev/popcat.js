@@ -88,6 +88,33 @@ export function greyscale(image: string): string {
   return `https://api.popcat.xyz/greyscale?image=${encodeURIComponent(image)}`;
 }
 
+export function ad(image: string): string {
+  if (!image) throw new Error("No image provided.");
+  if (typeof image !== "string") throw new Error("Image must be a string.");
+  if (!image.startsWith("https://"))
+    throw new Error("Image must be a valid URL.");
+
+  return `https://api.popcat.xyz/ad?image=${encodeURIComponent(image)}`;
+}
+
+export function blur(image: string): string {
+  if (!image) throw new Error("No image provided.");
+  if (typeof image !== "string") throw new Error("Image must be a string.");
+  if (!image.startsWith("https://"))
+    throw new Error("Image must be a valid URL.");
+
+  return `https://api.popcat.xyz/blur?image=${encodeURIComponent(image)}`;
+}
+
+export function invert(image: string): string {
+  if (!image) throw new Error("No image provided.");
+  if (typeof image !== "string") throw new Error("Image must be a string.");
+  if (!image.startsWith("https://"))
+    throw new Error("Image must be a valid URL.");
+
+  return `https://api.popcat.xyz/invert?image=${encodeURIComponent(image)}`;
+}
+
 export function whoWouldWin(image1: string, image2: string): string {
   if (!image1) throw new Error("No image 1 provided.");
   if (typeof image1 !== "string") throw new Error("Image 1 must be a string.");

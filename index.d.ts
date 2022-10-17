@@ -46,6 +46,12 @@ declare module "popcat.js" {
 
   export function greyscale(image: string): string;
 
+  export function ad(image: string): string;
+
+  export function blur(image: string): string;
+
+  export function invert(image: string): string;
+
   export function whoWouldWin(image1: string, image2: string): string;
 
   export function ship(image1: string, image2: string): string;
