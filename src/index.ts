@@ -138,6 +138,25 @@ export function drake(text1: string, text2: string): string {
   )}&text2=${encodeURIComponent(text2)}`;
 }
 
+export async function translate(lang: string, text: string): Promise<string> {
+  if (!lang) throw new Error("No text 1 provided.");
+  if (!text) throw new Error("No text 2 provided.");
+  if (typeof lang !== "string") throw new Error("Text 1 must be a string.");
+  if (typeof text !== "string") throw new Error("Text 2 must be a string.");
+
+  const data = (await fetch(
+    `https://api.popcat.xyz/translate?to=${encodeURIComponent(
+      lang
+    )}&text=${encodeURIComponent(text)}`
+  )
+    .then((res) => res.json())
+    .catch((e) => {
+      throw new Error(e);
+    })) as { translated: string };
+
+  return data.translated;
+}
+
 export function colorify(image: string, color: string): string {
   if (!image) throw new Error("No image provided.");
   if (typeof image !== "string") throw new Error("Image must be a string.");
@@ -223,6 +242,21 @@ export async function textToMorse(text: string): Promise<string> {
     })) as { morse: string };
 
   return data.morse;
+}
+
+export async function encode(text: string): Promise<string> {
+  if (!text) throw new Error("No text provided.");
+  if (typeof text !== "string") throw new Error("Text must be a string.");
+
+  const data = (await fetch(
+    `https://api.popcat.xyz/encode?text=${encodeURIComponent(text)}`
+  )
+    .then((res) => res.json())
+    .catch((e) => {
+      throw new Error(e);
+    })) as { binary: string };
+
+  return data.binary;
 }
 
 export async function shorten(url: string, slug: string): Promise<string> {
