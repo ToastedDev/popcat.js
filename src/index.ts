@@ -129,6 +129,20 @@ export function drake(text1: string, text2: string): string {
   )}&text2=${encodeURIComponent(text2)}`;
 }
 
+export function colorify(image: string, color: string): string {
+  if (!image) throw new Error("No image provided.");
+  if (typeof image !== "string") throw new Error("Image must be a string.");
+  if (!image.startsWith("https://"))
+    throw new Error("Image must be a valid URL.");
+
+  if (!color) throw new Error("No color provided.");
+  if (typeof color !== "string") throw new Error("Text 2 must be a string.");
+
+  return `https://api.popcat.xyz/colorify?image=${encodeURIComponent(
+    image
+  )}&color=${encodeURIComponent(color)}`;
+}
+
 export function unforgivable(text: string): string {
   if (!text) throw new Error("No text provided.");
   if (typeof text !== "string") throw new Error("Text must be a string.");

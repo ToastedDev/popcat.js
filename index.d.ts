@@ -50,6 +50,8 @@ declare module "popcat.js" {
 
   export function drake(text1: string, text2: string): string;
 
+  export function colorify(image: string, color: string): string;
+
   export function oogway(text: string): string;
 
   export function unforgivable(text: string): string;
