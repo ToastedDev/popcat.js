@@ -1,14 +1,10 @@
 import fetch from "node-fetch";
 
-export type PopcatError = {
-  message: string;
-  isError: boolean;
-};
-
 export * from "popcat-chatbot";
 export * from "./fetchers/Color";
-export * from "./fetchers/WelcomeCard";
 export * from "./fetchers/GitHub";
+export * from "./fetchers/Lyrics";
+export * from "./fetchers/WelcomeCard";
 
 export function screenshot(url: string): string {
   if (!url) throw new Error("No URL provided.");
@@ -20,7 +16,7 @@ export async function shorten(url: string, slug: string): Promise<string> {
   if (!url) throw new Error("No URL provided.");
   if (!slug) throw new Error("No slug provided.");
 
-  const res = (await fetch(
+  const data = (await fetch(
     `https://api.popcat.xyz/shorten?url=${encodeURIComponent(
       url
     )}&extension=${encodeURIComponent(slug)}`
@@ -28,9 +24,9 @@ export async function shorten(url: string, slug: string): Promise<string> {
     .then((res) => res.json())
     .catch((e) => {
       throw new Error(e);
-    })) as { url: string; shortened: string; error: PopcatError };
+    })) as { url: string; shortened: string; error?: string };
 
-  if (res.error) throw new Error(res.error.message);
+  if (data.error) throw new Error(data.error);
 
-  return Promise.resolve(res.shortened);
+  return Promise.resolve(data.shortened);
 }
