@@ -259,3 +259,13 @@ export async function fact(): Promise<string> {
 
   return data.fact;
 }
+
+export async function wyr(): Promise<string[]> {
+  const data = (await fetch("https://api.popcat.xyz/fact")
+    .then((res) => res.json())
+    .catch((e) => {
+      throw new Error(e);
+    })) as { ops1: string; ops2: string };
+
+  return [data.ops1, data.ops2];
+}

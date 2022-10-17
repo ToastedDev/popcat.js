@@ -102,4 +102,6 @@ declare module "popcat.js" {
   export async function quote(): Promise<QuoteData>;
 
   export async function fact(): Promise<string>;
+
+  export async function wyr(): Promise<string[]>;
 }
