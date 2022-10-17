@@ -8,6 +8,7 @@ export type PopcatError = {
 export * from "popcat-chatbot";
 export * from "./fetchers/Color";
 export * from "./fetchers/WelcomeCard";
+export * from "./fetchers/GitHub";
 
 export function screenshot(url: string): string {
   if (!url) throw new Error("No URL provided.");
