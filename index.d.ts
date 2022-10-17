@@ -60,6 +60,8 @@ declare module "popcat.js" {
 
   export function pikachu(text: string): string;
 
+  export function caution(text: string): string;
+
   export async function lulcat(text: string): Promise<string>;
 
   export async function mock(text: string): Promise<string>;
