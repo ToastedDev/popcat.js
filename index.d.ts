@@ -40,4 +40,6 @@ declare module "popcat.js" {
   export async function github(username: string): Promise<GitHubData>;
 
   export async function lyrics(song: string): Promise<LyricsData>;
+
+  export async function pickupLine(): Promise<string>;
 }

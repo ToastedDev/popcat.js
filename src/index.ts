@@ -30,3 +30,13 @@ export async function shorten(url: string, slug: string): Promise<string> {
 
   return Promise.resolve(data.shortened);
 }
+
+export async function pickupLine(): Promise<string> {
+  const data = await fetch("https://api.popcat.xyz/pickuplines")
+    .then((res) => res.json())
+    .catch((e) => {
+      throw new Error(e);
+    });
+
+  return data.pickupline;
+}
