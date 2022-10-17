@@ -40,6 +40,8 @@ declare module "popcat.js" {
 
   export function gun(image: string): string;
 
+  export function clown(image: string): string;
+
   export function whoWouldWin(image1: string, image2: string): string;
 
   export function ship(image1: string, image2: string): string;
