@@ -53,6 +53,10 @@ declare module "popcat.js" {
 
   export function unforgivable(text: string): string;
 
+  export function biden(text: string): string;
+
+  export function pikachu(text: string): string;
+
   export async function lulcat(text: string): Promise<string>;
 
   export async function shorten(url: string, slug: string): Promise<string>;

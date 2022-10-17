@@ -135,6 +135,20 @@ export function unforgivable(text: string): string {
   return `https://api.popcat.xyz/unforgivable?text=${encodeURIComponent(text)}`;
 }
 
+export function biden(text: string): string {
+  if (!text) throw new Error("No text provided.");
+  if (typeof text !== "string") throw new Error("Text must be a string.");
+
+  return `https://api.popcat.xyz/biden?text=${encodeURIComponent(text)}`;
+}
+
+export function pikachu(text: string): string {
+  if (!text) throw new Error("No text provided.");
+  if (typeof text !== "string") throw new Error("Text must be a string.");
+
+  return `https://api.popcat.xyz/pikachu?text=${encodeURIComponent(text)}`;
+}
+
 export async function lulcat(text: string): Promise<string> {
   if (!text) throw new Error("No text provided.");
   if (typeof text !== "string") throw new Error("Text must be a string.");
