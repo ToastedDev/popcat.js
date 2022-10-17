@@ -66,6 +66,8 @@ declare module "popcat.js" {
 
   export async function mock(text: string): Promise<string>;
 
+  export async function textToMorse(text: string): Promise<string>;
+
   export async function shorten(url: string, slug: string): Promise<string>;
 
   export class WelcomeCard {
