@@ -41,6 +41,8 @@ declare module "popcat.js" {
 
   export function whoWouldWin(image1: string, image2: string): string;
 
+  export function ship(image1: string, image2: string): string;
+
   export function sadCat(text: string): string;
 
   export function pooh(text1: string, text2: string): string;
@@ -92,4 +94,6 @@ declare module "popcat.js" {
   export async function showerThought(): Promise<ShowerThoughtData>;
 
   export async function quote(): Promise<QuoteData>;
+
+  export async function fact(): Promise<string>;
 }

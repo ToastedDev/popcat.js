@@ -76,6 +76,22 @@ export function whoWouldWin(image1: string, image2: string): string {
   )}&image2=${encodeURIComponent(image2)}`;
 }
 
+export function ship(image1: string, image2: string): string {
+  if (!image1) throw new Error("No image 1 provided.");
+  if (typeof image1 !== "string") throw new Error("Image 1 must be a string.");
+  if (!image1.startsWith("https://"))
+    throw new Error("Image 1 must be a valid URL.");
+
+  if (!image2) throw new Error("No image 2 provided.");
+  if (typeof image2 !== "string") throw new Error("Image 2 must be a string.");
+  if (!image2.startsWith("https://"))
+    throw new Error("Image 2 must be a valid URL.");
+
+  return `https://api.popcat.xyz/ship?user1=${encodeURIComponent(
+    image1
+  )}&user2=${encodeURIComponent(image2)}`;
+}
+
 export function sadCat(text: string): string {
   if (!text) throw new Error("No text provided.");
   if (typeof text !== "string") throw new Error("Text must be a string.");
@@ -203,4 +219,14 @@ export async function quote(): Promise<QuoteData> {
     })) as QuoteData;
 
   return data;
+}
+
+export async function fact(): Promise<string> {
+  const data = (await fetch("https://api.popcat.xyz/fact")
+    .then((res) => res.json())
+    .catch((e) => {
+      throw new Error(e);
+    })) as { fact: string };
+
+  return data.fact;
 }
