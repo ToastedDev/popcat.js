@@ -4,3 +4,4 @@ lib/
 
 # files
 package-lock.json
+popcat.js-v*.tgz
