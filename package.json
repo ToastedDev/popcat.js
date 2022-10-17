@@ -4,10 +4,29 @@
   "description": "A wrapper for Pop Cat's API.",
   "main": "lib/index.js",
   "types": "index.d.ts",
-  "repository": "https://github.com/tcaNPM/popcat.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tcaNPM/popcat.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tcaNPM/popcat.js/issues"
+  },
+  "homepage": "https://popcat.js.org",
   "author": "NotTCA",
   "license": "MIT",
   "private": false,
+  "keywords": [
+    "discord.js",
+    "discord.js image generation",
+    "discord.js welcome card",
+    "discord.js chatbot",
+    "popcat",
+    "popcat.xyz",
+    "popcat api",
+    "welcome card",
+    "chatbot",
+    "image generation"
+  ],
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build"
@@ -25,5 +44,9 @@
   "files": [
     "lib/**/*",
     "index.d.ts"
-  ]
+  ],
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  }
 }
