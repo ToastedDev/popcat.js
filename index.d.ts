@@ -42,6 +42,8 @@ declare module "popcat.js" {
     public render(): string;
   }
 
+  export async function color(hex: string): Promise<ColorData>;
+
   export async function github(username: string): Promise<GitHubData>;
 
   export async function lyrics(song: string): Promise<LyricsData>;
