@@ -2,6 +2,7 @@ export * from "./CarData";
 export * from "./ColorData";
 export * from "./GitHubData";
 export * from "./LyricsData";
+export * from "./MemeData";
 export * from "./NPMData";
 export * from "./PeriodicTableData";
 export * from "./QuoteData";

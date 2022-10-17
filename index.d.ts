@@ -4,6 +4,7 @@ import {
   Gender,
   GitHubData,
   LyricsData,
+  MemeData,
   NPMData,
   PeriodicTableData,
   QuoteData,
@@ -104,4 +105,6 @@ declare module "popcat.js" {
   export async function fact(): Promise<string>;
 
   export async function wyr(): Promise<string[]>;
+
+  export async function meme(): Promise<MemeData>;
 }

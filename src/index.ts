@@ -1,6 +1,7 @@
 import fetch from "node-fetch";
 import {
   CarData,
+  MemeData,
   QuoteData,
   RandomColorData,
   ShowerThoughtData,
@@ -268,4 +269,14 @@ export async function wyr(): Promise<string[]> {
     })) as { ops1: string; ops2: string };
 
   return [data.ops1, data.ops2];
+}
+
+export async function meme(): Promise<MemeData> {
+  const data = (await fetch("https://api.popcat.xyz/meme")
+    .then((res) => res.json())
+    .catch((e) => {
+      throw new Error(e);
+    })) as MemeData;
+
+  return data;
 }
