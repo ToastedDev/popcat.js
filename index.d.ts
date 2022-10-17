@@ -123,4 +123,6 @@ declare module "popcat.js" {
   export async function wyr(): Promise<string[]>;
 
   export async function meme(): Promise<MemeData>;
+
+  export async function eightBall(): Promise<string>;
 }

@@ -383,3 +383,13 @@ export async function meme(): Promise<MemeData> {
 
   return data;
 }
+
+export async function eightBall(): Promise<string> {
+  const data = (await fetch("https://api.popcat.xyz/8ball")
+    .then((res) => res.json())
+    .catch((e) => {
+      throw new Error(e);
+    })) as { answer: string };
+
+  return data.answer;
+}
