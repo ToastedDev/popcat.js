@@ -9,5 +9,5 @@
     "moduleResolution": "node",
     "outDir": "./lib"
   },
-  "include": ["./src/**/*", "index.d.ts"]
+  "include": ["./src/**/*", "index.d.ts", "types"]
 }

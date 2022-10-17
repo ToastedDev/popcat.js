@@ -1,26 +1,5 @@
 import fetch from "node-fetch";
-
-export type AccountType = "User" | "Organization";
-
-export type GitHubData = {
-  url: string;
-  avatar: string;
-  account_type: AccountType;
-  name: string;
-  company: string | "None";
-  blog: string;
-  location: string;
-  email: string;
-  bio: string;
-  twitter: string;
-  public_repos: string;
-  public_gists: string;
-  followers: string;
-  following: string;
-  created_at: string;
-  updated_at: string;
-  error?: string;
-};
+import { GitHubData } from "../../types/GitHubData";
 
 export async function github(username: string): Promise<GitHubData> {
   if (!username) throw new Error("No username provided.");

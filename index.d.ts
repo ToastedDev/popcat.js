@@ -1,3 +1,5 @@
+import { ColorData, GitHubData, LyricsData } from "./types";
+
 declare module "popcat.js" {
   export class Chatbot {
     constructor(options?: { name: string; gender: Gender; owner: string });
@@ -34,4 +36,8 @@ declare module "popcat.js" {
 
     public render(): string;
   }
+
+  export async function github(username: string): Promise<GitHubData>;
+
+  export async function lyrics(song: string): Promise<LyricsData>;
 }

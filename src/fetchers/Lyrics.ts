@@ -1,12 +1,5 @@
 import fetch from "node-fetch";
-
-export type LyricsData = {
-  title: string;
-  image: string;
-  artist: string;
-  lyrics: string;
-  error?: string;
-};
+import { LyricsData } from "../../types/LyricsData";
 
 export async function lyrics(title: string): Promise<LyricsData> {
   if (!title) throw new Error("No song title provided.");
