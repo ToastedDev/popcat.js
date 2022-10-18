@@ -1,35 +1,17 @@
-import {
-  CarData,
-  ColorData,
-  Gender,
-  GitHubData,
-  iTunesData,
-  LyricsData,
-  MemeData,
-  NPMData,
-  PeriodicTableData,
-  QuoteData,
-  RandomColorData,
-  ShowerThoughtData,
-  SubredditData,
-  WeatherData,
-  WelcomeOptions,
-} from "./src/types";
-
 declare module "popcat.js" {
   export class Chatbot {
-    constructor(options?: { name: string; gender: Gender; owner: string });
+    constructor(options?: {
+      name: string;
+      gender: "Male" | "Female";
+      owner: string;
+    });
 
     public setName(name: string): this;
-    public setGender(gender: Gender): this;
+    public setGender(gender: "Male" | "Female"): this;
     public setOwner(owner: string): this;
 
     public chat(message: string): Promise<string>;
   }
-
-  export async function color<C extends string>(
-    hex: string
-  ): Promise<Response<C>>;
 
   export function screenshot(url: string): string;
 
@@ -102,7 +84,13 @@ declare module "popcat.js" {
   export async function shorten(url: string, slug: string): Promise<string>;
 
   export class WelcomeCard {
-    constructor(options?: WelcomeOptions);
+    constructor(options?: {
+      background: string;
+      avatar: string;
+      text1: string;
+      text2: string;
+      text3: string;
+    });
 
     public setBackground(url: string): this;
     public setAvatar(url: string): this;
@@ -113,39 +101,141 @@ declare module "popcat.js" {
     public render(): string;
   }
 
-  export async function color(hex: string): Promise<ColorData>;
+  export async function color(hex: string): Promise<{
+    hex: string;
+    name: string;
+    rgb: string;
+    color_image: string;
+    brightened: string;
+  }>;
 
-  export async function github(username: string): Promise<GitHubData>;
+  export async function github(username: string): Promise<{
+    url: string;
+    avatar: string;
+    account_type: AccountType;
+    name: string;
+    company: string | "None";
+    blog: string;
+    location: string;
+    email: string;
+    bio: string;
+    twitter: string;
+    public_repos: string;
+    public_gists: string;
+    followers: string;
+    following: string;
+    created_at: string;
+    updated_at: string;
+  }>;
 
-  export async function lyrics(song: string): Promise<LyricsData>;
+  export async function lyrics(song: string): Promise<{
+    title: string;
+    image: string;
+    artist: string;
+    lyrics: string;
+    error?: string;
+  }>;
 
-  export async function periodicTable(
-    element: string
-  ): Promise<PeriodicTableData>;
+  export async function periodicTable(element: string): Promise<{
+    name: string;
+    symbol: string;
+    atomic_number: number;
+    atomic_mass: number;
+    period: number;
+    phase: "Solid" | "Liquid" | "Gas";
+    discovered_by: string;
+    image: string;
+    summary: string;
+  }>;
 
-  export async function subreddit(name: string): Promise<SubredditData>;
+  export async function subreddit(name: string): Promise<{
+    name: string;
+    title: string;
+    active_users: string;
+    members: string;
+    description: string;
+    icon: string;
+    banner: string;
+    allow_videos: boolean;
+    allow_images: boolean;
+    over_18: boolean;
+    url: string;
+  }>;
 
-  export async function weather(query: string): Promise<WeatherData>;
+  export async function weather(query: string): Promise<{
+    name: string;
+    title: string;
+    active_users: string;
+    members: string;
+    description: string;
+    icon: string;
+    banner: string;
+    allow_videos: boolean;
+    allow_images: boolean;
+    over_18: boolean;
+    url: string;
+  }>;
 
-  export async function npm(pkg: string): Promise<NPMData>;
+  export async function npm(pkg: string): Promise<{
+    name: string;
+    version: string;
+    description: string;
+    keywords: string;
+    author: string;
+    author_email: string;
+    last_published: string;
+    maintainers: string;
+    repository: string;
+    downloads_this_year: string;
+  }>;
 
-  export async function itunes(title: string): Promise<iTunesData>;
+  export async function itunes(title: string): Promise<{
+    url: string;
+    name: string;
+    artist: string;
+    album: string;
+    release_date: string;
+    price: string;
+    length: string;
+    genre: string;
+    thumbnail: string;
+  }>;
 
   export async function pickupLine(): Promise<string>;
 
-  export async function randomColor(): Promise<RandomColorData>;
+  export async function randomColor(): Promise<{
+    hex: string;
+    name: string;
+    image: string;
+  }>;
 
-  export async function car(): Promise<CarData>;
+  export async function car(): Promise<{
+    image: string;
+    title: string;
+  }>;
 
-  export async function showerThought(): Promise<ShowerThoughtData>;
+  export async function showerThought(): Promise<{
+    result: string;
+    author: string;
+    upvotes: number;
+  }>;
 
-  export async function quote(): Promise<QuoteData>;
+  export async function quote(): Promise<{
+    quote: string;
+    upvotes: string;
+  }>;
 
   export async function fact(): Promise<string>;
 
   export async function wyr(): Promise<string[]>;
 
-  export async function meme(): Promise<MemeData>;
+  export async function meme(): Promise<{
+    title: string;
+    url: string;
+    image: string;
+    upvotes: string;
+    comments: string;
+  }>;
 
   export async function eightBall(): Promise<string>;
 }
